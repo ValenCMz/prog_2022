@@ -11,5 +11,6 @@
 	<classpathentry kind="src" path="Practico_3"/>
 	<classpathentry kind="src" path="Ejercicios_internet"/>
 	<classpathentry kind="src" path="Practico_4"/>
+	<classpathentry kind="src" path="Practico_5"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
