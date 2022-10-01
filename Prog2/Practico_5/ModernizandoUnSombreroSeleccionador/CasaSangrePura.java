@@ -9,7 +9,7 @@ public class CasaSangrePura extends Casa {
 	//para agregar el alumno:
 		//el alumno debe contar con un familiar que pertenezca a la casa
 	public boolean permiteAlumno(Alumno alumno) {
-		if(alumno.tieneFamiliares(this)) {
+		if(alumno.tieneFamiliares(this)&&(this.permiteAlumno(alumno))) {
 			this.agregarAlumno(alumno);
 			return true;
 		}
