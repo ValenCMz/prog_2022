@@ -18,7 +18,12 @@ public class Cereal {
 
 	//el cereal cumple si tiene todos los minerales que el lote tambien tiene
 	public boolean cerealCumple(Lote lote) {		
-		return this.minerales.containsAll(lote.getMinerales());
+		for(String mineral:minerales) {
+			if(!lote.contieneMineral(mineral)) {
+				return false;
+			}
+		}
+		return true;
 	}
 		
 	public String getNombre() {

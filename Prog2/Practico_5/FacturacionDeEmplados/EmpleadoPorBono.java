@@ -20,7 +20,7 @@ public class EmpleadoPorBono extends Empleado {
 		for(Venta venta : ventas) {
 			sumaVentas += venta.getValor();
 		}
-		double sueldo = super.getSueldoMensual() + (sumaVentas+this.porcVentas);
+		double sueldo = super.getSueldoMensual() + (sumaVentas*this.porcVentas);
 		if(this.ventas.size()>=bonoPorVentas) {
 			sueldo+=this.bonoPorVentas;
 		}

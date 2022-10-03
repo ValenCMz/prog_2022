@@ -1,6 +1,5 @@
 package CooperativaDeCereales;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class Lote {
@@ -20,8 +19,13 @@ public class Lote {
 //	un lote cumple los requerimientos de un cereal
 //	si tiene todos los minerales que requiere el cereal
 	public boolean loteCumple(Cereal cereal) {
-		return this.minerales.containsAll(cereal.getMinerales());
+		return cereal.cerealCumple(this);
 	}
+	
+	public boolean contieneMineral(String mineral) {
+		return this.getMinerales().contains(mineral);
+	}
+	
 	public String getNombre() {
 		return nombre;
 	}
@@ -36,16 +40,13 @@ public class Lote {
 	}
 	
 	public boolean esEspecial(ArrayList<String>mineralesInteresPrimario) {
-		boolean especial = false;
-		int i = 0;
-		while(this.minerales.size()<i && especial==false) {
-			if(this.minerales.containsAll(mineralesInteresPrimario)) {
-				especial = true;
+		for(String mineral: mineralesInteresPrimario) {
+			if(!this.contieneMineral(mineral)) {
+				return false;
 			}
 		}
-		return especial;
+		return true;
 	}
-
 	
 	
 
