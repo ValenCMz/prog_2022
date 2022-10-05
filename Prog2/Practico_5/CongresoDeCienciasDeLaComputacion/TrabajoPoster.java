@@ -8,8 +8,10 @@ public class TrabajoPoster extends Trabajo {
 		super(nombre);	
 	}
 	
+	
 	public boolean evaluadorEsApto(Evaluador evaluador) {
-		ArrayList<String>palabrasClaves = super.getPalabrasClave();
+										//super solo para redefinir el mismo metodo
+		ArrayList<String>palabrasClaves = this.getPalabrasClave();
 		boolean coincideUno = false;
 		int i = 0;
 		while(!coincideUno && palabrasClaves.size()>i) {

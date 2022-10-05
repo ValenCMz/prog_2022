@@ -7,11 +7,14 @@ public class Congreso {
 	private String nombre;
 	private ArrayList<Evaluador> evaluadores;
 	private ArrayList<Trabajo> trabajosPresentados;
+	private ArrayList<String>temasEspecificos;
+
 	
 	public Congreso(String nombre) {
 		this.nombre = nombre;
 		this.evaluadores = new ArrayList<Evaluador>();
 		this.trabajosPresentados = new ArrayList<Trabajo>();
+		this.temasEspecificos = new ArrayList<String>();
 	}
 	
 	
@@ -47,6 +50,18 @@ public class Congreso {
 			return null;
 		}
 	}
+	
+	public boolean esExperto(Evaluador evaluador) {
+		int i = 0;
+		boolean esExperto = false;
+		while(!esExperto && i<this.temasEspecificos.size()) {
+			if(evaluador.getTemas().contains(temasEspecificos.get(i))) {
+				esExperto = true;
+			}
+		}
+		return esExperto;
+	}
+	
 	
 	public int trabajosPorEvaluador(Evaluador evaluador) {
 		return evaluador.getCantTrabajos();

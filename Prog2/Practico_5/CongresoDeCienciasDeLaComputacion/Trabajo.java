@@ -39,6 +39,17 @@ public class Trabajo {
 		this.palabrasClave = palabrasClave;
 	}
 
-	
+	public String getTitulo() {
+		return titulo;
+	}
+
+	public void setTitulo(String titulo) {
+		this.titulo = titulo;
+	}
+
+	@Override
+	public String toString() {
+		return "Trabajo: " + this.getTitulo();
+	}
 	
 }
