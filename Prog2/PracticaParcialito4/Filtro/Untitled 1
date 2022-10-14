@@ -1,0 +1,33 @@
+Asimismo dado un producto químico, los cultivos son capaces de decir si en algún
+momento puede serle de utilidad o no, es decir si el agroquímico puede tratar una de sus
+enfermedades frecuentes y no se desaconseja su uso en el cultivo. 
+
+Se debe proveer los siguientes servicios:
+● Proveer un listado de agroquímicos que puedan tratar una enfermedad determinada.
+● Dado un cultivo y una enfermedad devolver el listado de agroquímicos con los
+pueden tratar. Tener en cuenta que ciertos agroquímicos no pueden aplicarse sobre
+determinados cultivos.
+
+Sistema par empresa agreciola:
+	fabricacion y venta de productos quimicos. 
+*Debe ser usado para decidir que agroquimico se puede utilizar para tratar ciertas enfermedades de los cultivos
+*Dado un productoQuimico, el cultivo es capaz de decir 
+	si es de utilidad o no(el producto puede tratar una de sus enfermedades frecuentes)
+	-El producto trata una enfermedad si los estados patalogicos estan contenido por las acciones del producto quimico
+*Proveer listado de agroquimicos que pueden tratar una enfermedad determinada
+*Dado un cultivo y una enfermedad, devolver una lista de agroquimicos con los que pueden tratar.(Tener en cuenta que ciertos agroquímicos no pueden aplicarse sobre
+determinados cultivos)
+
+ProductoQuimico: 
+	*Nombre
+	*Lista cultivosDesaconsejados
+	*Lista estadosPatologicosDelCultivo
+	*Lista patalogiasQueTrata
+
+Enfermedad:
+	*Nombre
+	*Lista estadosPatalogicosATratar
+	
+Cultivo:
+	*Nombre
+	*Lista enfermedadesFrecuentes

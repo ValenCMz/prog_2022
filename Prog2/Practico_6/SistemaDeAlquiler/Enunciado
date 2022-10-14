@@ -1,0 +1,30 @@
+Enunciado Sistema de alquiler
+
+Videoclub de barrio, quiere incorporar a su cartera de negrocios el alquiler de autos
+	Va a crear un sistema Unificado de alquiler.
+		debe:
+			*Permitir alquilar un determinado item a un cliente hasta una fecha determinada
+			*Llevar control de los items alquilados a cada cliente
+
+Peliculas:	
+	infoFilmografica.
+	cantCopias //de esta pelicula
+	
+*Puede ser alquilada si hay copias aun disponibles
+
+Vehiculos: (pueden ser electricos, nafteros o dieses)
+	marca
+	kms
+	patente
+
+*Puede ser alquilado a un cliente a la vez
+
+¿que puedo abstraer en una clase padre?
+	nombre?
+	fechaLimite?
+	fechaInicio?
+	id?
+	
+¿que otr clase puedo tener?
+cliente creo
+y item
