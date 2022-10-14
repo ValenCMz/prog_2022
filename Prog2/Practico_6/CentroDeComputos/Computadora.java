@@ -1,21 +1,24 @@
 package CentroDeComputos;
 
-public class Computadora extends ColaDeEspera{
-	private String nombre;
+public class Computadora extends Elemento{
 	private double velocidadDeProcesamiento;
+	private Proceso proceso;
 
 	public Computadora(String nombre, double velocidadDeProcesamiento) {
-		super();
-		this.nombre = nombre;
+		super(nombre);
 		this.velocidadDeProcesamiento = velocidadDeProcesamiento;
 	}
-
-	@Override
-	public void ordenar() {
-		// TODO Auto-generated method stub
-		
-	}
-
 	
+	public double getVelocidadDeProcesamiento() {
+		return this.velocidadDeProcesamiento;
+	}
+	
+	public boolean esMayor(Elemento elemento) {
+		return this.getVelocidadDeProcesamiento() >  ((Computadora) elemento).getVelocidadDeProcesamiento();
+	}
+	
+	public void ejecutarProceso(Proceso p) {
+		this.proceso =p;
+	}
 	
 }

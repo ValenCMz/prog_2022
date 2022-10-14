@@ -3,19 +3,38 @@ package CentroDeComputos;
 import java.util.ArrayList;
 
 public class ControDeComputo {
-	private ColaDeEspera cola;
-	private ArrayList<Proceso>procesos;
-	private ArrayList<Computadora>computadorasDisponibles;
+	private ColaDeEspera colaProcesos;
+	private ColaDeEspera colaComputadoras;
 	
-	public ControDeComputo(ColaDeEspera cola) {
-		this.procesos = new ArrayList<Proceso>();
-		this.computadorasDisponibles = new ArrayList<Computadora>();
-		this.cola = cola;
+	public ControDeComputo(ColaDeEspera colaProcesos, ColaDeEspera colaComputadoras) {
+		this.colaProcesos = colaProcesos;
+		this.colaComputadoras = colaComputadoras;
 	}
 	
-	public void ejecutarProcesos(Proceso proceso) {
-		if(this.computadorasDisponibles.size()==0) {
-			cola.ordenar(this.procesos);
+//	Si no hay computadoras disponibles los procesos a ejecutar deben
+//	esperar en una cola de espera que los ordena teniendo en cuenta sus requerimientos de
+//	memoria
+	public void addComputadora(Computadora pc) {
+		if(pc==null ) {
+			return;
+		}
+		if(colaProcesos.tieneElementos()) {
+			Proceso proceso = (Proceso) colaProcesos.obtener();
+			pc.ejecutarProceso(proceso);
+		}
+		else {
+			colaComputadoras.addElemento(pc);
+		}
+	}
+	
+	public void addProceso(Proceso p) {
+		if(p==null)return;
+		if(colaComputadoras.tieneElementos()) {
+			Computadora computadora = (Computadora) colaComputadoras.obtener();
+			computadora.ejecutarProceso(p);
+		}
+		else {
+			colaProcesos.addElemento(p);
 		}
 	}
 	
