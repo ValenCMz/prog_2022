@@ -4,11 +4,10 @@ import java.time.LocalDate;
 
 public abstract class Elemento {
 	private String nombre;
-	private LocalDate fechaDeCreacion;
 
-	public Elemento(String nombre, LocalDate fechaDeCreacion) {
+	public Elemento(String nombre) {
 		this.nombre = nombre;
-		this.fechaDeCreacion = fechaDeCreacion;
+	
 	}
 	
 	//va a ser abstracta?

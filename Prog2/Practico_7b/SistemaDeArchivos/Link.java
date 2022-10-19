@@ -11,8 +11,8 @@ public class Link extends Elemento{
 	
 	private Elemento referencia;
 
-	public Link(String nombre, LocalDate fechaDeCreacion, Elemento referencia) {
-		super(nombre, fechaDeCreacion);
+	public Link(String nombre, Elemento referencia) {
+		super(nombre);
 		this.referencia = referencia;
 	}
 	

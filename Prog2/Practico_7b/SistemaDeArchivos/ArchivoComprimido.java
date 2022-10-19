@@ -6,8 +6,8 @@ import java.util.ArrayList;
 public class ArchivoComprimido extends Elemento{
 	private ArrayList<Elemento>elementos;
 
-	public ArchivoComprimido(String nombre, LocalDate fechaDeCreacion, ArrayList<Elemento> elementos) {
-		super(nombre, fechaDeCreacion);
+	public ArchivoComprimido(String nombre, ArrayList<Elemento> elementos) {
+		super(nombre);
 		this.elementos = elementos;
 	}
 	
