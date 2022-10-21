@@ -3,11 +3,13 @@ package SistemaDeArchivos;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-public class ArchivoComprimido extends Elemento{
+import SistemaDeArchivos.Filtros.Filtro;
+
+public class ArchivoComprimido extends Directorio{
 	private ArrayList<Elemento>elementos;
 
-	public ArchivoComprimido(String nombre, ArrayList<Elemento> elementos) {
-		super(nombre);
+	public ArchivoComprimido(String nombre, ArrayList<Elemento> elementos,LocalDate fechaDeModificacion, LocalDate fechaDeCreacion) {
+		super(nombre, fechaDeModificacion, fechaDeCreacion);
 		this.elementos = elementos;
 	}
 	
@@ -25,5 +27,23 @@ public class ArchivoComprimido extends Elemento{
 			sum+=elemento.getTamanio();
 		}
 		return sum;
+	}
+	
+	public ArrayList<Elemento> buscar(Filtro filtro){
+		ArrayList<Elemento>elementosCumple=new ArrayList<>();
+		boolean cumple=false;
+		int i = 0;
+		while(!cumple&&i<this.elementos.size()) {
+			if(filtro.cumple(elementos.get(i))) {
+				cumple=true;
+			i++;
+			}
+		}
+		
+		if(cumple) {
+			elementosCumple.add(this);
+		}
+	
+		return elementosCumple;
 	}
 }

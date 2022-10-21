@@ -1,13 +1,16 @@
 package SistemaDeArchivos;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+
+import SistemaDeArchivos.Filtros.Filtro;
 
 public class Archivo extends Elemento{
 	private int tamanioEnKb;
 
 	
-	public Archivo(String nombre,int tamanioEnKb) {
-		super(nombre);
+	public Archivo(String nombre,int tamanioEnKb, LocalDate fechaDeModificacion, LocalDate fechaDeCreacion) {
+		super(nombre,fechaDeModificacion,fechaDeCreacion);
 		this.tamanioEnKb = tamanioEnKb;
 	}
 	
@@ -19,4 +22,14 @@ public class Archivo extends Elemento{
 	public int getTamanio() {
 		return this.tamanioEnKb;
 	}
+	
+	@Override
+	public ArrayList<Elemento> buscar(Filtro filtro) {
+		ArrayList<Elemento>elementos=new ArrayList<>();
+		if(filtro.cumple(this)) {
+			elementos.add(this);
+		}
+		return elementos;
+	}
 }
+
