@@ -18,5 +18,7 @@
 	<classpathentry kind="src" path="Parcialito_4"/>
 	<classpathentry kind="src" path="Practico_7b"/>
 	<classpathentry kind="src" path="Practico_8"/>
+	<classpathentry kind="src" path="ConceptosQueMeQuedaronSueltos"/>
+	<classpathentry kind="src" path="ParcialesViejos"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
