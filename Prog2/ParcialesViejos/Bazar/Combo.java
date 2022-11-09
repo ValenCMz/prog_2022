@@ -100,25 +100,20 @@ public class Combo extends Elemento{
 
 	@Override
 	public Elemento copiar(Filtro f) {
-		if(f.cumple(this)) {
-			ArrayList<Elemento>hijosQueCumplen = new ArrayList<>();
-			for(Elemento e:elementos) {
+		Combo comboCopia =  new Combo(this.tope,this.descuentoPorProducto,this.filtro);
+			for(Elemento e : elementos) {			
 				Elemento copia = e.copiar(f);//delego la copia
 				if(copia!=null) {
-					hijosQueCumplen.add(copia);				}
+					comboCopia.addElemento(copia);				}
+				}
+			if(comboCopia.estaVacio()) {
+				return null;
 			}
-			 if(hijosQueCumplen.isEmpty()) {
-				 return null;
-			 }
-			 else {
-				 Combo copiaCombo = new Combo(this.tope,this.descuentoPorProducto,this.filtro);
-				 for(Elemento e:hijosQueCumplen) {
-					 copiaCombo.addElemento(e);
-				 }
-				 return copiaCombo;
-			 }
-		}
-		return null;
+		return comboCopia;
+	}
+	
+	public boolean estaVacio() {
+		return this.elementos.isEmpty();
 	}
 
 }
